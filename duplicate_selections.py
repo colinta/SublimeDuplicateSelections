@@ -16,13 +16,23 @@ class DuplicateSelectionsCommand(sublime_plugin.TextCommand):
             else:
                 empties.append(region)
 
-        if len(empties) != len(notempties):
+        if not notempties:
+            sublime.status_message("No non-empty regions")
+            return
+        if not empties:
+            sublime.status_message("No empty regions")
+            return
+        if len(notempties) > 1 and len(empties) != len(notempties):
             sublime.status_message("Number of empty regions (%i) does note equal number of non-empty regions (%i)" % (len(empties), len(notempties)))
             return
 
         e = self.view.begin_edit('duplicate_selections')
-        for region_i, notempty_region in enumerate(notempties):
-            empty_region = empties[region_i]
+        for region_i, empty_region in enumerate(empties):
+            if len(notempties) == 1:
+                notempty_region = notempties[0]
+            else:
+                notempty_region = notempties[region_i]
+
             # adjust regions to the right of empty_region
             for fix_i, fix_region in enumerate(notempties):
                 if fix_region.begin() >= empty_region.end():
