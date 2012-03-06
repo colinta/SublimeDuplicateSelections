@@ -42,4 +42,8 @@ class DuplicateSelectionsCommand(sublime_plugin.TextCommand):
                     empties[fix_i] = sublime.Region(fix_region.a + len(notempty_region), fix_region.b + len(notempty_region))
 
             self.duplicate_regions(edit, empty_region, notempty_region)
+        self.view.sel().clear()
+        for region in empties:
+            self.view.sel().add(region)
+        self.view.show_at_center(empties[0])
         self.view.end_edit(e)
