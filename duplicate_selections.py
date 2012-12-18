@@ -17,7 +17,28 @@ class DuplicateSelectionsCommand(sublime_plugin.TextCommand):
                 empties.append(region)
 
         if not notempties:
-            sublime.status_message("No non-empty regions")
+            if not empties:
+                return  # no cursors at all!?  weirdo.
+
+            # gather all the lines
+            lines = []
+            for cursor in empties:
+                lines.append(self.view.substr(self.view.full_line(cursor)))
+            # insert them
+            self.view.sel().clear()
+            lines.reverse()
+            empties.reverse()
+            e = self.view.begin_edit('duplicate_selections')
+            for region_i, cursor in enumerate(empties):
+                row, col = self.view.rowcol(cursor.a)
+                if col == 0:
+                    insert_point = cursor.a
+                else:
+                    insert_point = self.view.full_line(cursor).end()
+                self.view.insert(e, insert_point, lines[region_i])
+                insert_point += col
+                self.view.sel().add(sublime.Region(insert_point, insert_point))
+            self.view.end_edit(e)
             return
         if not empties:
             sublime.status_message("No empty regions")
