@@ -1,11 +1,13 @@
 DuplicateSelections for Sublime Text 2
-==================================
+======================================
 
 If you have an equal number of empty selections (cursors) and selections, this
 command will place each selection at the corresponding cursor location.
 
 Installation
 ------------
+
+### Sublime Text 2
 
 1. Using Package Control, install "DuplicateSelections"
 
@@ -19,6 +21,13 @@ Or:
 
 2. clone this repo
 3. Install keymaps for the commands (see Example.sublime-keymap for my preferred keys)
+
+### Sublime Text 3
+
+1. Open the Sublime Text 2 Packages folder
+2. clone this repo, but use the `st3` branch
+
+       git clone -b st3 git@github.com:colinta/SublimeDuplicateSelections
 
 Commands
 --------
