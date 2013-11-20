@@ -1,8 +1,7 @@
 DuplicateSelections
 ===================
 
-If you have an equal number of empty selections (cursors) and selections, this
-command will place each selection at the corresponding cursor location.
+If you have an equal number of empty selections (cursors) and selections, this command will place each selection at the corresponding cursor location.
 
 Installation
 ------------
@@ -12,10 +11,9 @@ Installation
 Or:
 
 1. Open the Sublime Text Packages folder
-
     - OS X: ~/Library/Application Support/Sublime Text 3/Packages/
     - Windows: %APPDATA%/Sublime Text 3/Packages/
-    - Linux: ~/.Sublime Text 3/Packages/
+    - Linux: ~/.Sublime Text 3/Packages/ or ~/.config/sublime-text-3/Packages
 
 2. clone this repo
 3. Install keymaps for the commands (see Example.sublime-keymap for my preferred keys)
