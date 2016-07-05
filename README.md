@@ -14,7 +14,7 @@ This can be extended to multiple selections: if you have an equal number of sele
 Or, you can select some text and place *multiple* empty cursors, and the selection will be inserted at all the cursor locations.
 
 ###### Example:
-<video src="example.mp4">example.mp4</video>
+<video src="https://github.com/colinta/SublimeDuplicateSelections/raw/master/example.mp4">[Example.mp4](https://github.com/colinta/SublimeDuplicateSelections/raw/master/example.mp4)</video>
 
 Installation
 ------------
