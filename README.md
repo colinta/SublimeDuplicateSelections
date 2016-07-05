@@ -1,7 +1,17 @@
 DuplicateSelections
 ===================
 
-If you have an equal number of empty selections (cursors) and selections, this command will place each selection at the corresponding cursor location.
+I wrote and use this plugin as an alternative to copy and pasting.
+
+First, you can use this command to duplicate the current line (or lines).
+
+Another common use case is when you need to copy some small bit of text, like a variable or method name.
+
+Select the text to copy, then `cmd+click` to place an empty cursor, then run this command to insert the selected text at the cursor position.
+
+This can be extended to multiple selections: if you have an equal number of selections and cursors, this command will place each selection at the corresponding cursor location.
+
+Or, you can select some text and place *multiple* empty cursors, and the selection will be inserted at all the cursor locations.
 
 Installation
 ------------
@@ -18,14 +28,7 @@ Or:
 2. clone this repo
 3. Install keymaps for the commands (see Example.sublime-keymap for my preferred keys)
 
-### Sublime Text 2
-
-1. Open the Sublime Text 2 Packages folder
-2. clone this repo, but use the `st2` branch
-
-       git clone -b st2 git@github.com:colinta/SublimeDuplicateSelections
-
 Commands
 --------
 
-`duplicate_selections`: For each empty cursor, copies a non-empty region into that cursor.
+`duplicate_selections`: See description above
