@@ -57,11 +57,11 @@ class DuplicateSelectionsCommand(sublime_plugin.TextCommand):
             return
 
         if not empties:
-            sublime.status_message("No empty regions")
+            self.view.show_popup("No empty regions")
             return
 
         if len(notempties) > 1 and len(empties) != len(notempties):
-            sublime.status_message("Number of empty regions (%i) does note equal number of non-empty regions (%i)" % (len(empties), len(notempties)))
+            self.view.show_popup("Number of empty regions (%i) does note equal number of non-empty regions (%i)" % (len(empties), len(notempties)))
             return
 
         for region_i, empty_region in enumerate(empties):
