@@ -3,10 +3,12 @@
   "description": "If you have an equal number of empty selections (cursors) and selections, this command will place each selection at the corresponding cursor location.",
   "author": "Colin T.A. Gray (colinta)",
   "details": "https://github.com/colinta/SublimeDuplicateSelections",
-  "labels": ["text manipulation"],
+  "labels": [
+    "text manipulation"
+  ],
   "releases": [
     {
-      "details": "https://github.com/colinta/SublimeDuplicateSelections/tags",
+      "tags": true,
       "sublime_text": ">=3000"
     }
   ]
