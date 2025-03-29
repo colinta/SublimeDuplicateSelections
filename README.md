@@ -19,19 +19,21 @@ Or, you can select some text and place *multiple* empty cursors, and the selecti
 Installation
 ------------
 
-1. Using Package Control, install "DuplicateSelections"
+Using Package Control, install "DuplicateSelections" or clone this repo in your packages folder.
 
-Or:
-
-1. Open the Sublime Text Packages folder
-    - OS X: ~/Library/Application Support/Sublime Text 3/Packages/
-    - Windows: %APPDATA%/Sublime Text 3/Packages/
-    - Linux: ~/.Sublime Text 3/Packages/ or ~/.config/sublime-text-3/Packages
-
-2. clone this repo
-3. Install keymaps for the commands (see Example.sublime-keymap for my preferred keys)
+I recommended you add key bindings for the commands. I've included my preferred bindings below.
+Copy them to your key bindings file (⌘⇧,).
 
 Commands
 --------
 
 `duplicate_selections`: See description above
+
+Key Bindings
+------------
+
+Copy these to your user key bindings file.
+
+<!-- keybindings start -->
+    { "keys": ["ctrl+d"], "command": "duplicate_selections" },
+<!-- keybindings stop -->
